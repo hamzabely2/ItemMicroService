@@ -1,0 +1,12 @@
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\bin\Debug\net6.0\Entity.deps.json
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\bin\Debug\net6.0\Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\bin\Debug\net6.0\Entity.pdb
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.AssemblyInfo.cs
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\refint\Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\Entity.pdb
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Entity\obj\Debug\net6.0\ref\Entity.dll

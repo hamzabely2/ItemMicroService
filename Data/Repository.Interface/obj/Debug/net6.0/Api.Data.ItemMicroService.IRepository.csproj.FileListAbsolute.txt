@@ -1,0 +1,15 @@
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\bin\Debug\net6.0\Api.Data.ItemMicroService.IRepository.deps.json
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\bin\Debug\net6.0\Api.Data.ItemMicroService.IRepository.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\bin\Debug\net6.0\Api.Data.ItemMicroService.IRepository.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\bin\Debug\net6.0\Api.Data.ItemMicroservice.Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\bin\Debug\net6.0\Api.Data.ItemMicroservice.Entity.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.csproj.AssemblyReference.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.AssemblyInfoInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.AssemblyInfo.cs
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.csproj.CoreCompileInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.csproj.CopyComplete
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\refint\Api.Data.ItemMicroService.IRepository.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\Api.Data.ItemMicroService.IRepository.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IRepository\obj\Debug\net6.0\ref\Api.Data.ItemMicroService.IRepository.dll

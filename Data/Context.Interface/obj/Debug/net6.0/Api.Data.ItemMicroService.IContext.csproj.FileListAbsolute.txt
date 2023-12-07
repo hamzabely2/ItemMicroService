@@ -1,0 +1,15 @@
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\bin\Debug\net6.0\Api.Data.ItemMicroService.IContext.deps.json
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\bin\Debug\net6.0\Api.Data.ItemMicroService.IContext.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\bin\Debug\net6.0\Api.Data.ItemMicroService.IContext.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\bin\Debug\net6.0\Api.Data.ItemMicroservice.Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\bin\Debug\net6.0\Api.Data.ItemMicroservice.Entity.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.csproj.AssemblyReference.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.AssemblyInfoInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.AssemblyInfo.cs
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.csproj.CoreCompileInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.csproj.CopyComplete
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\refint\Api.Data.ItemMicroService.IContext.dll
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\Api.Data.ItemMicroService.IContext.pdb
+C:\Users\hamza.belyahiaoui\Desktop\ecole\pot Microservice\Api MiceroService\ItemMicroService\Api.Data.ItemMicroService.IContext\obj\Debug\net6.0\ref\Api.Data.ItemMicroService.IContext.dll
