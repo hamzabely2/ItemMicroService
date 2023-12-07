@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Api.Business.ItemMicroService.Service": {
+      "commandName": "Project"
+    },
+    "Profil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\ecole\\pot Microservice\\Api MiceroService\\Api.PotShop.ItemMicroService\\Api.PotShop.ItemMicroService.sln"
+    }
+  }
+}

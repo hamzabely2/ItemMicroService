@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MI8nBxwkhXZVwCcTJd0QjMT8MMRNyVYOLL/0py1059Y=",
+  "Source": "ItemMicroService",
+  "BasePath": "_content/ItemMicroService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
