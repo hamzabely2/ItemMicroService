@@ -13,7 +13,7 @@ namespace Service
         private readonly ItemMicroServiceIDbContext _context;
         private readonly ColorIRepository _colorRepository;
 
-        public ColorService(ItemMicroServiceIDbContext context,ColorIRepository colorRepository)
+        public ColorService(ItemMicroServiceIDbContext context, ColorIRepository colorRepository)
         {
             _context = context;
             _colorRepository = colorRepository;
@@ -56,7 +56,7 @@ namespace Service
             {
                 colorList.Add(DatailsItemMapper.TransformExiteColor(color));
             }
-           return colorList;
+            return colorList;
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Service
         {
             var color = DatailsItemMapper.TransformCreateColor(request);
             var LabelExiste = await _colorRepository.GetColorByName(request.Label);
-            if(LabelExiste != null)
+            if (LabelExiste != null)
                 throw new ArgumentException("l'action a échoué: la couleur existe déjà");
 
             var colorCreated = await _colorRepository.CreateElementAsync(color).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Service
         public async Task<ColorDto> DeleteColor(int colorId)
         {
             var color = await _colorRepository.GetByKeys(colorId).ConfigureAwait(false);
-            if(color == null)
+            if (color == null)
                 throw new ArgumentException("l'action a échoué: la couleur n'existe pas");
 
             var colorDelete = await _colorRepository.DeleteElementAsync(color).ConfigureAwait(false);

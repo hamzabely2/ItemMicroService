@@ -41,6 +41,6 @@ namespace Repository
                     .ThenInclude(ii => ii.Images).ToList();
         }
 
-      
-        }
+
     }
+}

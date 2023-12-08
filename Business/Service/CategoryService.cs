@@ -7,12 +7,12 @@ using Service.Interface;
 
 namespace Service
 {
-     public class CategoryService : CategoryIService
+    public class CategoryService : CategoryIService
     {
         private readonly ItemMicroServiceIDbContext _context;
         private readonly CategoryIRepository _categoryRepository;
 
-        public CategoryService(ItemMicroServiceIDbContext context,CategoryIRepository categoryRepository)
+        public CategoryService(ItemMicroServiceIDbContext context, CategoryIRepository categoryRepository)
         {
             _context = context;
             _categoryRepository = categoryRepository;
@@ -27,7 +27,7 @@ namespace Service
             var categories = new List<string>
             {
                 "Tagine", "Pot de conservation", "Pot de jardin"
-          
+
             };
 
             foreach (var category in categories)

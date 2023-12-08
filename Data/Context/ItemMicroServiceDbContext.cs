@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Context
 {
-    public partial class ItemMicroServiceDbContext : DbContext,ItemMicroServiceIDbContext
+    public partial class ItemMicroServiceDbContext : DbContext, ItemMicroServiceIDbContext
     {
         public ItemMicroServiceDbContext()
         {
@@ -20,7 +20,7 @@ namespace Context
         public virtual DbSet<Basket> Baskets { get; set; } = null!;
         public virtual DbSet<BasketItem> BasketItems { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
-        public virtual DbSet<Color> Colors { get; set; } = null!;        public virtual DbSet<Comment> Comments { get; set; } = null!;
+        public virtual DbSet<Color> Colors { get; set; } = null!; public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<ImageItem> ImagesItems { get; set; } = null!;
         public virtual DbSet<Item> Items { get; set; } = null!;

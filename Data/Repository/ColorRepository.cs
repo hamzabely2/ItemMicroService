@@ -2,11 +2,6 @@
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository
 {
@@ -17,7 +12,7 @@ namespace Repository
             _table = _idbcontext.Set<Color>();
         }
         private readonly DbSet<Color> _table;
-    
+
 
         /// get color by name   <summary>
         /// </summary>

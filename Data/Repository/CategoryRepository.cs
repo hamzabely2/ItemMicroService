@@ -12,7 +12,7 @@ namespace Repository
             _table = _idbcontext.Set<Category>();
         }
         private readonly DbSet<Category> _table;
-    
+
 
         /// get category by name   <summary>
         /// </summary>

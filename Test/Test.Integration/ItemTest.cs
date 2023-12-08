@@ -1,23 +1,14 @@
 ﻿using Context.Interface;
-using Entity.Model;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using Model.DetailsItem;
-using Model.Item;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net;
-using System.Net.Http.Json;
-using System.Security.Claims;
-using System.Text;
 using Test.Common;
 using Xunit;
 
 namespace Test.Integration
 {
-    public class ItemTest :  IClassFixture<WebApplicationFactory<Program>>, IDisposable
+    public class ItemTest : IClassFixture<WebApplicationFactory<Program>>, IDisposable
     {
         private readonly WebApplicationFactory<Program> _factory;
         private readonly HttpClient _client;
@@ -65,8 +56,8 @@ namespace Test.Integration
         [Fact]
         public async Task GetItem_ReturnItems()
         {
-       
-            
+
+
             // Arrange
             var response = await _client.GetAsync("/api/item/1");
 

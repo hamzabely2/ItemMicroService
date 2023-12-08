@@ -1,6 +1,5 @@
 ﻿using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Item;
 using Service.Interface;
@@ -19,7 +18,7 @@ namespace Api.PotShop.ItemMicroService.Controllers
             _itemService = itemService;
         }
 
-        
+
 
         /// get list item <summary>
         /// </summary>

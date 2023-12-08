@@ -18,7 +18,7 @@ namespace Service
 
 
 
-        public ItemService(ItemMicroServiceIDbContext _idbcontext, ItemIRepository itemRepository,ColorIService colorService,MaterialIService materialService,CategoryIService categoryService)
+        public ItemService(ItemMicroServiceIDbContext _idbcontext, ItemIRepository itemRepository, ColorIService colorService, MaterialIService materialService, CategoryIService categoryService)
         {
             _itemRepository = itemRepository;
             _colorService = colorService;
@@ -27,7 +27,7 @@ namespace Service
             _table = _idbcontext;
 
         }
-       
+
 
 
         private async void AddingItemDetails()
@@ -45,7 +45,7 @@ namespace Service
         public async Task<ItemDetailsDto> GetItemById(int itemId)
         {
             AddingItemDetails();
-            var items =  _itemRepository.GetItemsWithDetails();
+            var items = _itemRepository.GetItemsWithDetails();
             var item = items.FirstOrDefault(item => item.Id == itemId);
 
             if (item == null)
@@ -61,7 +61,7 @@ namespace Service
         {
             AddingItemDetails();
 
-            var items =  _itemRepository.GetItemsWithDetails();
+            var items = _itemRepository.GetItemsWithDetails();
             if (items == null)
                 throw new ArgumentException("l'action a échoué");
 
@@ -77,7 +77,7 @@ namespace Service
         {
             AddingItemDetails();
 
-           var itemToAdd = ItemMapper.TransformDtoAdd(request);
+            var itemToAdd = ItemMapper.TransformDtoAdd(request);
             var items = _itemRepository.GetItemsWithDetails();
 
             bool NameExiste = items.Any(NameExiste => NameExiste.Name == itemToAdd.Name);
@@ -91,7 +91,7 @@ namespace Service
 
             if (itemAdd == null)
                 throw new ArgumentException("l'action a échoué");
-      
+
 
             return ItemMapper.TransformDtoExitWithDetails(itemAdd);
         }
@@ -116,11 +116,11 @@ namespace Service
                 throw new ArgumentException("l'action a échoué: Les détails de l'article n'ont pas été précisés.");
 
             var images = item.FirstOrDefault(i => i.Id == itemId).ImagesItems.FirstOrDefault().Images;
-            if(images == null)
+            if (images == null)
                 throw new ArgumentException("l'action a échoué: errro sur les images");
 
 
-            var itemDtoUpdate = ItemMapper.TransformDtoUpdate(request, uniteGet,images);
+            var itemDtoUpdate = ItemMapper.TransformDtoUpdate(request, uniteGet, images);
             var itemUpdate = await _itemRepository.UpdateElementAsync(itemDtoUpdate).ConfigureAwait(false);
 
             if (itemUpdate == null)
@@ -139,7 +139,7 @@ namespace Service
         {
             AddingItemDetails();
 
-            var item = _itemRepository.GetItemsWithDetails().FirstOrDefault(item => item.Id == itemId); 
+            var item = _itemRepository.GetItemsWithDetails().FirstOrDefault(item => item.Id == itemId);
             if (item == null)
                 throw new ArgumentException("l'action a échoué : l'article ne existe pas");
 
@@ -159,13 +159,13 @@ namespace Service
                 throw new ArgumentException("l'action a échoué : l'article n'a pas été supprime ");
 
             //var commentListComments = await _itemRepository.GetCommentOfAnItem(itemId);
-           /* foreach (var comment in commentListComments)
-            {
-                await _itemRepository.DeleteElementAsync(comment);
-            }*/
+            /* foreach (var comment in commentListComments)
+             {
+                 await _itemRepository.DeleteElementAsync(comment);
+             }*/
 
             return ItemMapper.TransformDtoExitWithDetails(itemDelete);
         }
-    
-}
+
+    }
 }

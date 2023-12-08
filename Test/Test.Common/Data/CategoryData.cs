@@ -1,11 +1,6 @@
 ﻿
 using Context.Interface;
 using Entity.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Test.Common
 {
@@ -17,7 +12,7 @@ namespace Test.Common
             {
                 Id = 1,
                 Label = "Tagine",
-               
+
             };
             var category2 = new Category
             {

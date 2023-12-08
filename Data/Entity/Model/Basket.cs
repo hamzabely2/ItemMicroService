@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Entity.Model;
+﻿namespace Entity.Model;
 
 public partial class Basket
 {

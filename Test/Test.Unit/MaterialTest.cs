@@ -1,14 +1,6 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Test.Common;
 
 namespace Api.Test.Unit
@@ -17,7 +9,7 @@ namespace Api.Test.Unit
     {
         private MaterialIRepository _materalRepository;
 
-    
+
 
         [SetUp]
         public void SetUp()
