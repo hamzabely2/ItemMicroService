@@ -32,10 +32,10 @@ namespace Context
         public virtual DbSet<RoleUser> UsersRoles { get; set; } = null!;
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;database=potshop;uid=root", ServerVersion.Parse("5.7.36-mysql"));
-        }
+        }*/
 
     }
 }

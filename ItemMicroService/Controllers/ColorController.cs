@@ -7,8 +7,10 @@ using Service.Interface;
 
 namespace Api.PotShop.ItemMicroService.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
+
     public class ColorController : Controller
     {
 
