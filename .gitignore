@@ -429,3 +429,18 @@ $RECYCLE.BIN/
 
 # VS Code directories
 .vs
+# Visual Studio Code
+.vs/
+
+# Rider
+.idea/
+
+# Output delle compilazioni
+*.dll
+*.pdb
+
+# Cache dei file di progetto
+**/*.proj.AssemblyReference.cache
+
+# File temporanei di test
+Test/Test.Unit/bin/Debug/net6.0/nunit_random_seed.tmp
