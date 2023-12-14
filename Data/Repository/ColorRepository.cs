@@ -5,7 +5,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class ColorRepository : GenericRepository<Color>, ColorIRepository
+    public class ColorRepository : GenericRepository<Color>, IColorRepository
     {
         public ColorRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {

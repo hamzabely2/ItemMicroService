@@ -3,7 +3,7 @@ using Model.DetailsItem;
 
 namespace Service.Interface
 {
-    public interface CategoryIService
+    public interface ICategoryService
     {
         void AddCategories();
         Task<List<CategoryDto>> GetAllCategory();

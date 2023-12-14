@@ -7,7 +7,7 @@ namespace Api.Test.Unit
 {
     public class CategoryTest : TestBase
     {
-        private CategoryIRepository _categoryRepository;
+        private ICategoryRepository _categoryRepository;
 
 
         [SetUp]
@@ -15,7 +15,7 @@ namespace Api.Test.Unit
         {
             SetUpTest();
 
-            _categoryRepository = _serviceProvider?.GetService<CategoryIRepository>();
+            _categoryRepository = _serviceProvider?.GetService<ICategoryRepository>();
             _context.CreateCategory();
         }
 

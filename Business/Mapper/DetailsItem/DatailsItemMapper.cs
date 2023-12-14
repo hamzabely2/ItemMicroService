@@ -5,7 +5,7 @@ using Model.DetailsItem;
 
 namespace Mapper.DetailsItem
 {
-    public class DatailsItemMapper
+    public static class  DatailsItemMapper
     {
         /// <summary>
         /// DTO for color

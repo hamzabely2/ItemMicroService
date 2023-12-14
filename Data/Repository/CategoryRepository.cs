@@ -5,7 +5,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class CategoryRepository : GenericRepository<Category>, CategoryIRepository
+    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
         public CategoryRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {

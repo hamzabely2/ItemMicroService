@@ -2,7 +2,7 @@
 
 namespace Repository.Interface
 {
-    public interface ColorIRepository : GenericIRepository<Color>
+    public interface IColorRepository : IGenericRepository<Color>
     {
         Task<Color> GetColorByName(string label);
     }

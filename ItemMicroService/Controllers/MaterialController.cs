@@ -10,9 +10,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     [ApiController]
     public class MaterialController : Controller
     {
-        private readonly MaterialIService _materialService;
+        private readonly IMaterialService _materialService;
 
-        public MaterialController(MaterialIService materialService)
+        public MaterialController(IMaterialService materialService)
         {
             _materialService = materialService;
         }

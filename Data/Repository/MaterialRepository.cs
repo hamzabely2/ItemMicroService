@@ -5,7 +5,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class MaterialRepository : GenericRepository<Material>, MaterialIRepository
+    public class MaterialRepository : GenericRepository<Material>, IMaterialRepository
     {
         public MaterialRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {

@@ -8901,13 +8901,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Test\\Test.Integration\\obj\\project.nuget.cache : Données non valides détectées lors du décodage."
-    }
-  ]
+  }
 }

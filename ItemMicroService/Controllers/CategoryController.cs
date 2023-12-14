@@ -11,9 +11,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     [ApiController]
     public class CategoryController : Controller
     {
-        private readonly CategoryIService _categoryService;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(CategoryIService categoryService)
+        public CategoryController( ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }

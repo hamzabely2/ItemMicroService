@@ -8,12 +8,12 @@ using Service.Interface;
 
 namespace Service
 {
-    public class ColorService : ColorIService
+    public class ColorService : IColorService
     {
         private readonly ItemMicroServiceIDbContext _context;
-        private readonly ColorIRepository _colorRepository;
+        private readonly IColorRepository _colorRepository;
 
-        public ColorService(ItemMicroServiceIDbContext context, ColorIRepository colorRepository)
+        public ColorService(ItemMicroServiceIDbContext context, IColorRepository colorRepository)
         {
             _context = context;
             _colorRepository = colorRepository;

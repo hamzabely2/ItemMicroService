@@ -2,7 +2,7 @@
 
 namespace Repository.Interface
 {
-    public interface MaterialIRepository : GenericIRepository<Material>
+    public interface IMaterialRepository : IGenericRepository<Material>
     {
         Task<Material> GetMaterialByName(string label);
 

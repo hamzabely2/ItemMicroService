@@ -429,6 +429,7 @@ $RECYCLE.BIN/
 
 # VS Code directories
 .vs
+<<<<<<< HEAD
 # Visual Studio Code
 .vs/
 
@@ -444,3 +445,12 @@ $RECYCLE.BIN/
 
 # File temporanei di test
 Test/Test.Unit/bin/Debug/net6.0/nunit_random_seed.tmp
+=======
+# Visual Studio
+.vs/ItemMicroService/DesignTimeBuild/.dtbcache.v2
+.vs/ItemMicroService/v17/.futdcache.v2
+.vs/ItemMicroService/v17/.suo
+.vs/ItemMicroService/v17/TestStore/1/004.testlog
+.vs/ProjectEvaluation/itemmicroservice.metadata.v5.2
+.vs/ProjectEvaluation/itemmicroservice.projects.v5.2
+>>>>>>> develop

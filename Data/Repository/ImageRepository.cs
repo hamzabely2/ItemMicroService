@@ -5,7 +5,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class ImageRepository : GenericRepository<ImageItem>, ImageIRepository
+    public class ImageRepository : GenericRepository<ImageItem>, IImageRepository
     {
         public ImageRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {

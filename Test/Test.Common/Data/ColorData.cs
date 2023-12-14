@@ -6,7 +6,7 @@ namespace Test.Common
 {
     public static class ColorData
     {
-        public static void CreateColor(this ItemMicroServiceIDbContext idbContext)
+        public static void CreateColors(this ItemMicroServiceIDbContext idbContext)
         {
             var color1 = new Color
             {
@@ -19,6 +19,17 @@ namespace Test.Common
                 Label = "green"
             };
             idbContext.Colors.AddRange(color1, color2);
+            idbContext.SaveChanges();
+        }
+        public static void CreateColor(this ItemMicroServiceIDbContext idbContext)
+        {
+            var color1 = new Color
+            {
+                Id = 3,
+                Label = "red"
+            };
+         
+            idbContext.Colors.AddRange(color1);
             idbContext.SaveChanges();
         }
     }

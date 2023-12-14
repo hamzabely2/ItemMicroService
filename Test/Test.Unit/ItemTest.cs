@@ -10,9 +10,7 @@ namespace Api.Test.Unit
 
     public class ItemTest : TestBase
     {
-        private ItemIRepository _itemRepository;
-
-
+        private IItemRepository _itemRepository;
 
         //private IServiceItem _itemService;
 
@@ -21,7 +19,7 @@ namespace Api.Test.Unit
         {
             SetUpTest();
 
-            _itemRepository = _serviceProvider?.GetService<ItemIRepository>();
+            _itemRepository = _serviceProvider?.GetService<IItemRepository>();
             //_itemService = _serviceProvider?.GetService<IServiceItem>();
 
             _context.CreateItem();
