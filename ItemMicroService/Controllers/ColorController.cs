@@ -13,9 +13,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     public class ColorController : Controller
     {
 
-        private readonly ColorIService _colorService;
+        private readonly IColorService _colorService;
 
-        public ColorController(ColorIService colorService)
+        public ColorController(IColorService colorService)
         {
             _colorService = colorService;
         }

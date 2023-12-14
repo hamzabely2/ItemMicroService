@@ -5,7 +5,7 @@ using Model.Item;
 
 namespace Mapper.Item
 {
-    public class ItemMapper
+    public static class ItemMapper
     {
         public static Entity.Model.Item TransformDtoAdd(ItemAdd item)
         {

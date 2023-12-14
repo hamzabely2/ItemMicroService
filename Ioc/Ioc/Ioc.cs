@@ -16,19 +16,19 @@ namespace Ioc
     {
         public static IServiceCollection ConfigureInjectionDependencyRepository(this IServiceCollection services)
         {
-            services.AddScoped<ItemIRepository, ItemRepository>();
-            services.AddScoped<MaterialIRepository, MaterialRepository>();
-            services.AddScoped<ColorIRepository, ColorRepository>();
-            services.AddScoped<CategoryIRepository, CategoryRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IMaterialRepository, MaterialRepository>();
+            services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             return services;
         }
         public static IServiceCollection ConfigureInjectionDependencyService(this IServiceCollection services)
         {
-            services.AddScoped<ItemIService, ItemService>();
-            services.AddScoped<ColorIService, ColorService>();
-            services.AddScoped<CategoryIService, CategoryService>();
-            services.AddScoped<MaterialIService, MaterialService>();
+            services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IColorService, ColorService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IMaterialService, MaterialService>();
 
 
             return services;

@@ -4,7 +4,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class GenericRepository<T> : GenericIRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly ItemMicroServiceIDbContext _idbcontext;
         private readonly DbSet<T> _table;

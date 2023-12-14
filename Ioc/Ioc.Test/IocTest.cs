@@ -3,6 +3,10 @@ using Context;
 using Context.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Repository.Interface;
+using Repository;
+using Service.Interface;
+using Service;
 
 namespace Ioc.Test
 {
@@ -15,7 +19,10 @@ namespace Ioc.Test
         /// <returns></returns>
         public static IServiceCollection ConfigureInjectionDependencyRepositoryTest(this IServiceCollection services)
         {
-            services.ConfigureInjectionDependencyRepository();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IMaterialRepository, MaterialRepository>();
+            services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             return services;
         }
@@ -28,7 +35,10 @@ namespace Ioc.Test
         /// <returns></returns>
         public static IServiceCollection ConfigureInjectionDependencyServiceTest(this IServiceCollection services)
         {
-            services.ConfigureInjectionDependencyService();
+            services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IColorService, ColorService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IMaterialService, MaterialService>();
 
             return services;
         }
@@ -40,10 +50,11 @@ namespace Ioc.Test
         /// <param name="services"></param>
         public static IServiceCollection ConfigureDBContextTest(this IServiceCollection services)
         {
-            return services.AddDbContext<ItemMicroServiceIDbContext, ItemMicroServiceDbContext>(options =>
-            {
-                options.UseInMemoryDatabase(Guid.NewGuid().ToString());
-            });
+            services.AddDbContext<ItemMicroServiceIDbContext, ItemMicroServiceDbContext>(options =>
+                options.UseInMemoryDatabase(databaseName: "TestApplication")
+                );
+
+            return services;
         }
     }
 }

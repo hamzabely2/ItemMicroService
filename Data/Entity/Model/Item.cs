@@ -6,10 +6,10 @@ namespace Entity.Model
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        public string? Name { get; set; }
         public float? Price { get; set; }
         public bool? Stock { get; set; }
-        public string Description { get; set; } = null!;
+        public string? Description { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public int? CategoryId { get; set; }

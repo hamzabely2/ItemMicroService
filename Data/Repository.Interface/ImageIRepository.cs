@@ -2,7 +2,7 @@
 
 namespace Repository.Interface
 {
-    public interface ImageIRepository : GenericIRepository<ImageItem>
+    public interface IImageRepository : IGenericRepository<ImageItem>
     {
     }
 }

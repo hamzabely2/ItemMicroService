@@ -2,7 +2,7 @@
 
 namespace Repository.Interface
 {
-    public interface CategoryIRepository : GenericIRepository<Category>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
         Task<Category> GetCategoryByName(string label);
     }

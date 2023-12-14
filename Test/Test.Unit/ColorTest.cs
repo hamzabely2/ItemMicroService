@@ -7,7 +7,7 @@ namespace Api.Test.Unit
 {
     public class ColorTest : TestBase
     {
-        private ColorIRepository _colorRepository;
+        private IColorRepository _colorRepository;
 
 
 
@@ -16,8 +16,8 @@ namespace Api.Test.Unit
         {
             SetUpTest();
 
-            _colorRepository = _serviceProvider?.GetService<ColorIRepository>();
-            _context.CreateColor();
+            _colorRepository = _serviceProvider?.GetService<IColorRepository>();
+            _context.CreateColors();
         }
 
         [TearDown]

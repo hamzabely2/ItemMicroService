@@ -11,9 +11,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     public class ItemController : Controller
     {
 
-        private readonly ItemIService _itemService;
+        private readonly IItemService _itemService;
 
-        public ItemController(ItemIService itemService)
+        public ItemController(IItemService itemService)
         {
             _itemService = itemService;
         }

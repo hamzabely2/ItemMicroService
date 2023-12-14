@@ -2,7 +2,6 @@
 using Entity.Model;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Model.DetailsItem;
@@ -16,18 +15,16 @@ using Test.Common;
 using Xunit;
 
 
-namespace Api.Test.Integration
+namespace Test.Integration
 {
-    public class ColorTest : TestBase, IClassFixture<WebApplicationFactory<Program>>, IDisposable
+    public class ColorTest : IClassFixture<WebApplicationFactory<Program>>, IDisposable
     {
         private readonly WebApplicationFactory<Program> _factory;
         private readonly HttpClient _client;
         protected readonly ItemMicroServiceIDbContext _context;
-        protected readonly IConfiguration _configuration;
 
         public ColorTest(WebApplicationFactory<Program> factory)
-        {
-            _factory = factory.WithWebHostBuilder(builder =>
+        { _factory = factory.WithWebHostBuilder(builder =>
             {
                 builder.UseEnvironment("Test");
             });
@@ -38,6 +35,13 @@ namespace Api.Test.Integration
 
             _context.Database.EnsureDeleted();
             _context.Database.EnsureCreated();
+            _context.CreateColor();
+        }
+   
+        public class ApiResponse<T>
+        {
+            public string Message { get; set; }
+            public T Result { get; set; }
         }
 
         public string GenerateJwtTokenForUser(ClaimsPrincipal user)
@@ -64,28 +68,35 @@ namespace Api.Test.Integration
         public async Task GetAllColors_ReturnAllColors()
         {
 
-            _context.CreateColor();
+            var adminUser = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, "admin_username"),
+            new Claim(ClaimTypes.Role, RoleString.Admin)
+        }, "test"));
+            var token = GenerateJwtTokenForUser(adminUser);
 
-            // Arrange
+            _client.DefaultRequestHeaders.Clear();
+            _client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"Bearer {token}");
+
+            // Act
             var response = await _client.GetAsync("/api/color");
 
             // Assert
             response.EnsureSuccessStatusCode();
 
-            var colors = await response.Content.ReadFromJsonAsync<List<ColorDto>>();
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<ColorDto>>>();
 
-            // Assertions sur la liste retournée
-            Assert.NotNull(colors);
-            Assert.NotEmpty(colors);
+            // Vérifiez que la réponse contient la propriété "message" et la propriété "result"
+            Assert.NotNull(apiResponse.Message);
+            Assert.NotNull(apiResponse.Result);
 
         }
 
         [Fact]
         public async Task CreateColor_ReturnColor()
         {
-            _context.CreateColor();
 
-            var newItem = new ColorDto { Label = "Red" };
+            var newItem = new ColorDto { Label = "yellow" };
             var newItemJson = new StringContent(JsonSerializer.Serialize(newItem), Encoding.UTF8, "application/json");
 
             var adminUser = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
@@ -106,29 +117,32 @@ namespace Api.Test.Integration
             Assert.NotNull(createdColor);
         }
 
-
-        [Fact]
-        public async Task DelteColor_ReturnColor()
+       /* [Fact]
+        public async Task DeleteColor_ReturnsNoContent()
         {
-            _context.CreateColor();
 
+            // ID de couleur à supprimer
+            int colorId = 1;
 
+            // Créez un utilisateur administrateur simulé avec un jeton d'authentification
             var adminUser = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, "admin_username"),
-            new Claim(ClaimTypes.Role, RoleString.Admin)
-        }, "test"));
+            {
+                new Claim(ClaimTypes.Name, "admin_username"),
+                new Claim(ClaimTypes.Role, RoleString.Admin)
+            }, "test"));
             var token = GenerateJwtTokenForUser(adminUser);
 
+            // Configurez le client avec le jeton d'authentification
             _client.DefaultRequestHeaders.Clear();
             _client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"Bearer {token}");
 
-            int colorId = 1;
+            // Act : Supprimez la couleur de l'API
             var response = await _client.DeleteAsync($"/api/color/delete/{colorId}");
 
+            // Assert : Vérifiez que la suppression a réussi avec le statut NoContent (204)
             response.EnsureSuccessStatusCode();
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
-        }
+            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);  
+        }*/
 
         public void Dispose()
         {

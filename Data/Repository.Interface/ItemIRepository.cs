@@ -2,7 +2,7 @@
 
 namespace Repository.Interface
 {
-    public interface ItemIRepository : GenericIRepository<Item>
+    public interface IItemRepository : IGenericRepository<Item>
     {
         List<Item> GetItemsWithDetails();
         Task<Item> GetItemByName(string name);

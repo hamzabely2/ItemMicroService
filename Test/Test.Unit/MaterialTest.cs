@@ -7,7 +7,7 @@ namespace Api.Test.Unit
 {
     public class MaterialTest : TestBase
     {
-        private MaterialIRepository _materalRepository;
+        private IMaterialRepository _materalRepository;
 
 
 
@@ -16,7 +16,7 @@ namespace Api.Test.Unit
         {
             SetUpTest();
 
-            _materalRepository = _serviceProvider?.GetService<MaterialIRepository>();
+            _materalRepository = _serviceProvider?.GetService<IMaterialRepository>();
             _context.CreateMaterial();
         }
 

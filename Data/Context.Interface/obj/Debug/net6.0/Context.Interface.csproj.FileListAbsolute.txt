@@ -1,0 +1,15 @@
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\bin\Debug\net6.0\Context.Interface.deps.json
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\bin\Debug\net6.0\Context.Interface.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\bin\Debug\net6.0\Context.Interface.pdb
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\bin\Debug\net6.0\Entity.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\bin\Debug\net6.0\Entity.pdb
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.csproj.AssemblyReference.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.AssemblyInfoInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.AssemblyInfo.cs
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.csproj.CoreCompileInputs.cache
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.csproj.CopyComplete
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\refint\Context.Interface.dll
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\Context.Interface.pdb
+C:\Users\hamza.belyahiaoui\Desktop\pot shop\ItemMicroService\Data\Context.Interface\obj\Debug\net6.0\ref\Context.Interface.dll

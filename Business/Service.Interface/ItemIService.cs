@@ -2,7 +2,7 @@
 
 namespace Service.Interface
 {
-    public interface ItemIService
+    public interface IItemService
     {
         Task<List<ItemDetailsDto>> GetListItem();
         Task<ItemDetailsDto> GetItemById(int itemId);

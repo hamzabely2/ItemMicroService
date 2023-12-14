@@ -8,17 +8,17 @@ using Service.Interface;
 
 namespace Service
 {
-    public class ItemService : ItemIService
+    public class ItemService : IItemService
     {
-        private readonly ItemIRepository _itemRepository;
-        private readonly ColorIService _colorService;
-        private readonly MaterialIService _materialService;
-        private readonly CategoryIService _categoryService;
+        private readonly IItemRepository _itemRepository;
+        private readonly IColorService _colorService;
+        private readonly IMaterialService _materialService;
+        private readonly ICategoryService _categoryService;
         private readonly ItemMicroServiceIDbContext _table;
 
 
 
-        public ItemService(ItemMicroServiceIDbContext _idbcontext, ItemIRepository itemRepository, ColorIService colorService, MaterialIService materialService, CategoryIService categoryService)
+        public ItemService(ItemMicroServiceIDbContext _idbcontext, IItemRepository itemRepository, IColorService colorService, IMaterialService materialService, ICategoryService categoryService)
         {
             _itemRepository = itemRepository;
             _colorService = colorService;
