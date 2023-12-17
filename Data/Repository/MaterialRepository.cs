@@ -2,15 +2,10 @@
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class MaterialRepository : GenericRepository<Material>, MaterialIRepository
+    public class MaterialRepository : GenericRepository<Material>, IMaterialRepository
     {
         public MaterialRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {
@@ -30,6 +25,6 @@ namespace Repository
 
             return material;
         }
-    
+
     }
 }

@@ -5,7 +5,7 @@ using Model.Item;
 
 namespace Mapper.Item
 {
-    public class ItemMapper
+    public static class ItemMapper
     {
         public static Entity.Model.Item TransformDtoAdd(ItemAdd item)
         {
@@ -25,8 +25,8 @@ namespace Mapper.Item
                         Images = new Image { FrontImage = item.FrontImage, FullImage = item.FullImage, SideImage = item.SideImage }
                     }
                  },
-                CreatedDate= DateTime.Now,
-                UpdateDate= DateTime.Now,
+                CreatedDate = DateTime.Now,
+                UpdateDate = DateTime.Now,
             };
         }
 
@@ -35,38 +35,38 @@ namespace Mapper.Item
         {
             if (item == null)
             {
-                return null; 
+                return null;
             }
             return new ItemDetailsDto
             {
                 Name = item.Name,
                 Description = item.Description,
                 Price = item.Price,
-                Stock = item.Stock,             
+                Stock = item.Stock,
                 Categories = new CategoryDto
                 {
-                    Label = item.Categories?.Label ?? "N/A" 
+                    Label = item.Categories?.Label ?? "N/A"
                 },
                 Colors = new ColorDto
                 {
-                    Label = item.Colors?.Label ?? "N/A" 
+                    Label = item.Colors?.Label ?? "N/A"
                 },
                 Materials = new MaterialDto
                 {
-                    Label = item.Materials?.Label ?? "N/A" 
+                    Label = item.Materials?.Label ?? "N/A"
                 },
                 Images = item.ImagesItems?.Select(imageItem => new ImageDto
-                 {
-                     FrontImage = imageItem.Images?.FrontImage ?? "N/A",
-                     FullImage = imageItem.Images?.FullImage ?? "N/A",
-                     SideImage = imageItem.Images?.SideImage ?? "N/A"
+                {
+                    FrontImage = imageItem.Images?.FrontImage ?? "N/A",
+                    FullImage = imageItem.Images?.FullImage ?? "N/A",
+                    SideImage = imageItem.Images?.SideImage ?? "N/A"
                 }).ToList() ?? new List<ImageDto>()
 
 
             };
         }
 
-        public static Entity.Model.Item TransformDtoUpdate(ItemUpdate request, Entity.Model.Item uniteGet,Image image)
+        public static Entity.Model.Item TransformDtoUpdate(ItemUpdate request, Entity.Model.Item uniteGet, Image image)
         {
 
             uniteGet.Name = request.Name;

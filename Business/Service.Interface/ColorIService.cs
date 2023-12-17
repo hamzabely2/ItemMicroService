@@ -2,7 +2,7 @@
 
 namespace Service.Interface
 {
-    public interface ColorIService
+    public interface IColorService
     {
         void AddColors();
         Task<List<ColorDto>> GetAllColor();

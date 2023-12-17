@@ -7,12 +7,12 @@ using Service.Interface;
 
 namespace Service
 {
-    public class MaterialService : MaterialIService
+    public class MaterialService : IMaterialService
     {
         private readonly ItemMicroServiceIDbContext _context;
-        private readonly MaterialIRepository _materialRepository;
+        private readonly IMaterialRepository _materialRepository;
 
-        public MaterialService(ItemMicroServiceIDbContext context,MaterialIRepository materialRepository)
+        public MaterialService(ItemMicroServiceIDbContext context, IMaterialRepository materialRepository)
         {
             _context = context;
             _materialRepository = materialRepository;
@@ -27,7 +27,7 @@ namespace Service
             var materials = new List<string>
             {
                 "Argile rouge", "Argile blanche", "Argile chamottée", "Argile noire", "Argile grès",
-               
+
             };
 
             foreach (var material in materials)

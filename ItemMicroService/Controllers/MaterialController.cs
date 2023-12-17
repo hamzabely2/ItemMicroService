@@ -1,6 +1,5 @@
 ﻿using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DetailsItem;
 using Service.Interface;
@@ -11,9 +10,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     [ApiController]
     public class MaterialController : Controller
     {
-        private readonly MaterialIService _materialService;
+        private readonly IMaterialService _materialService;
 
-        public MaterialController(MaterialIService materialService)
+        public MaterialController(IMaterialService materialService)
         {
             _materialService = materialService;
         }

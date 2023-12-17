@@ -5,7 +5,7 @@ using Repository.Interface;
 
 namespace Repository
 {
-    public class ItemRepository : GenericRepository<Item>, ItemIRepository
+    public class ItemRepository : GenericRepository<Item>, IItemRepository
     {
         public ItemRepository(ItemMicroServiceIDbContext _idbcontext) : base(_idbcontext)
         {
@@ -41,6 +41,6 @@ namespace Repository
                     .ThenInclude(ii => ii.Images).ToList();
         }
 
-      
-        }
+
     }
+}

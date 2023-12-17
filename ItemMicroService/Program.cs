@@ -1,9 +1,10 @@
-using Ioc.Test;
 using Ioc;
+using Ioc.Test;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Serilog;
+using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = builder.Configuration;
@@ -26,6 +27,10 @@ else
     builder.Services.ConfigureInjectionDependencyRepository();
     builder.Services.ConfigureInjectionDependencyService();
 }
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Adding Authentication
 var validAudience = builder.Configuration["JWT:ValidAudience"];
@@ -52,13 +57,14 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = validAudience,
         ValidIssuer = validIssuer,
         ClockSkew = TimeSpan.Zero,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
 });
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+
+
+
 
 var app = builder.Build();
 
@@ -68,8 +74,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseHttpsRedirection();
-app.UseAuthentication(); // Make sure to call UseAuthentication before UseAuthorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

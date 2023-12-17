@@ -2,22 +2,17 @@
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class ColorRepository : GenericRepository<Color>, ColorIRepository
+    public class ColorRepository : GenericRepository<Color>, IColorRepository
     {
         public ColorRepository(ItemMicroServiceIDbContext idbcontext) : base(idbcontext)
         {
             _table = _idbcontext.Set<Color>();
         }
         private readonly DbSet<Color> _table;
-    
+
 
         /// get color by name   <summary>
         /// </summary>

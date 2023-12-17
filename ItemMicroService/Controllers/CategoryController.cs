@@ -1,7 +1,6 @@
 ﻿
 using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DetailsItem;
 using Service.Interface;
@@ -12,9 +11,9 @@ namespace Api.PotShop.ItemMicroService.Controllers
     [ApiController]
     public class CategoryController : Controller
     {
-        private readonly CategoryIService _categoryService;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(CategoryIService categoryService)
+        public CategoryController( ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }

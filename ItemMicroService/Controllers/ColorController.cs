@@ -1,20 +1,21 @@
 ﻿using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DetailsItem;
 using Service.Interface;
 
 namespace Api.PotShop.ItemMicroService.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
+
     public class ColorController : Controller
     {
 
-        private readonly ColorIService _colorService;
+        private readonly IColorService _colorService;
 
-        public ColorController(ColorIService colorService)
+        public ColorController(IColorService colorService)
         {
             _colorService = colorService;
         }

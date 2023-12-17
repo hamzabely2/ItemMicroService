@@ -2,7 +2,7 @@
 
 namespace Service.Interface
 {
-    public interface MaterialIService
+    public interface IMaterialService
     {
         void AddMaterials();
         Task<List<MaterialDto>> GetAllMaterial();

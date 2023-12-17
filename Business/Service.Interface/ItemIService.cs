@@ -1,13 +1,8 @@
 ﻿using Model.Item;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Interface
 {
-    public interface ItemIService
+    public interface IItemService
     {
         Task<List<ItemDetailsDto>> GetListItem();
         Task<ItemDetailsDto> GetItemById(int itemId);

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Model.Item
 {
-    public class ItemAdd 
+    public class ItemAdd
     {
         [Required(ErrorMessage = "Veuillez entrer un nom")]
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "Veuillez entrer un desciption")]
         public string? Description { get; set; }
-       
+
         [Required(ErrorMessage = "Veuillez entrer le prix")]
         public float? Price { get; set; }
 
@@ -38,7 +33,7 @@ namespace Model.Item
 
         [Required(ErrorMessage = "Veuillez un image")]
         public string? SideImage { get; set; }
-        public  DateTime UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
     }
 }
