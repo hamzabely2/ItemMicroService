@@ -4,4 +4,4 @@ services:
     build:
       dockerfile: ./ItemMicroService/Dockerfile
     ports:
-      - "5137:5137"
+      - "1001:80"
