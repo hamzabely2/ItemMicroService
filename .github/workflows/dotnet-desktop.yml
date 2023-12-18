@@ -1,15 +1,13 @@
-name: Build and Deploy
-
 on:
   push:
     branches:
       - master
       - develop
   pull_request:
-    types: [closed]
-    branches:
-      - master
-
+      types: [closed]
+      branches:
+        - master
+        
 jobs:
   build:
     runs-on: self-hosted
@@ -22,6 +20,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.100
+
 
     - name: Restore dependencies
       run: dotnet restore
@@ -38,25 +37,12 @@ jobs:
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh-known-hosts: |
-          your-server-ip-or-hostname ssh-rsa ${{ secrets.SSH_PUBLIC_KEY }}
-
-    - name: Build and Push Docker image
+    - name: Deploy to production
       run: |
-        docker build -t your-docker-registry/your-repository:latest .
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push your-docker-registry/your-repository:latest
-        
-
-    - name: Deploy to Server
-      run: |
-        ssh user@your-server-ip "docker-compose -f /path/to/your/docker-compose.yml pull"
-        ssh user@your-server-ip "docker-compose -f /path/to/your/docker-compose.yml up -d"
+        # Add your deployment script or commands here
+        # For example, you might publish your application and deploy to a server
