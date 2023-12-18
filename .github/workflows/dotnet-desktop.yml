@@ -54,6 +54,7 @@ jobs:
         docker build -t your-docker-registry/your-repository:latest .
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push your-docker-registry/your-repository:latest
+        
 
     - name: Deploy to Server
       run: |
