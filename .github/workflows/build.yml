@@ -31,9 +31,9 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
            mkdir -p .sonar/scanner
-           wget https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -O sonar-scanner-msbuild.zip
-           unzip -o sonar-scanner-msbuild.zip -d .sonar/scanner
-           rm sonar-scanner-msbuild.zip
+           Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -OutFile sonar-scanner-msbuild.zip
+           Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner
+           Remove-Item sonar-scanner-msbuild.zip
 
       - name: Build and analyze with SonarCloud
         env:
