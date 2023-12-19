@@ -3,7 +3,7 @@ name: Build and Analyze with SonarCloud
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -35,11 +35,12 @@ jobs:
 
     steps:
     - name: Setup SonarCloud
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: sonarsource/sonarcloud-github-action@v1
       with:
         organization: ${{ secrets.SONAR_ORGANIZATION }}
         token: ${{ secrets.SONAR_TOKEN }}
         projectKey: your-sonar-project-key
 
     - name: Run SonarCloud Analysis
-      run: dotnet sonarscanner begin /k:"your-sonar-project-key" /d:sonar.login="${{ secrets.SONAR_TOKEN}}" /d:sonar.host.url="https://sonarcloud.io" && dotnet build --configuration Release && dotnet test && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      run: |
+        dotnet sonarscanner begin /k:"your-sonar-project-key" /d:sonar.login="${{ secrets.SONAR_TOKEN}}" /d:sonar.host.url="https://sonarcloud.io" && dotnet build --configuration Release && dotnet test && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
