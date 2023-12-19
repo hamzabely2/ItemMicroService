@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on:  ubuntu-latest
+    runs-on:   windows-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
-          mkdir -p .sonar/scanner
+           mkdir -p .sonar/scanner
            wget https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -O sonar-scanner-msbuild.zip
            unzip -o sonar-scanner-msbuild.zip -d .sonar/scanner
            rm sonar-scanner-msbuild.zip
