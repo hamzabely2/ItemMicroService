@@ -35,15 +35,10 @@ jobs:
            Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner
            Remove-Item sonar-scanner-msbuild.zip
 
-      #- name: Set execution permissions for dotnet-sonarscanner
-       # run: |
-        #  Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.IsReadOnly = $false }
-         # Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.Attributes -= [System.IO.FileAttributes]::ReadOnly }
-
       - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          PowerShell -Command "& '$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner' begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'"
+          PowerShell -Command "& '.sonar\scanner\dotnet-sonarscanner' begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'"
           dotnet build
-          PowerShell -Command "& '$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner' end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'"
+          PowerShell -Command "& '.sonar\scanner\dotnet-sonarscanner' end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'"
