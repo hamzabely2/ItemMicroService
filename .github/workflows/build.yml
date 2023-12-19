@@ -35,10 +35,10 @@ jobs:
            Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner
            Remove-Item sonar-scanner-msbuild.zip
 
-      - name: Set execution permissions for dotnet-sonarscanner
-        run: |
-          Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.IsReadOnly = $false }
-          Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.Attributes -= [System.IO.FileAttributes]::ReadOnly }
+      #- name: Set execution permissions for dotnet-sonarscanner
+       # run: |
+        #  Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.IsReadOnly = $false }
+         # Get-Item "$env:GITHUB_WORKSPACE\.sonar\scanner\dotnet-sonarscanner" | ForEach-Object { $_.Attributes -= [System.IO.FileAttributes]::ReadOnly }
 
       - name: Build and analyze with SonarCloud
         env:
