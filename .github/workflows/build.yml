@@ -39,6 +39,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          .sonar\scanner\sonar-scanner-4.4.0.2170-netcoreapp3.0\sonar-scanner-4.4.0.2170-netcoreapp3.0\bin\sonar-scanner begin /k:"hamzabely2_ItemMicroService" /o:"hamzabely2" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build --configuration Release
-          .sonar\scanner\sonar-scanner-4.4.0.2170-netcoreapp3.0\sonar-scanner-4.4.0.2170-netcoreapp3.0\bin\sonar-scanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"hamzabely2_ItemMicroService" /o:"hamzabely2" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build 
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
