@@ -39,8 +39,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-         & "$PWD\.sonar\scanner\dotnet-sonarscanner" begin /k:"hamzabely2_ItemMicroService" /o:"hamzabely2" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+         & "$($PWD.Path)\.sonar\scanner\dotnet-sonarscanner" begin /k:"hamzabely2_ItemMicroService" /o:"hamzabely2" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
          dotnet build
-         & "$PWD\.sonar\scanner\dotnet-sonarscanner" end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+         & "$($PWD.Path)\.sonar\scanner\dotnet-sonarscanner" end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+  
   
 
