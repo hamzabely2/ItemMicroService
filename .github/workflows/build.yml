@@ -35,10 +35,14 @@ jobs:
            Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner
            Remove-Item sonar-scanner-msbuild.zip
 
+      - name: Install dotnet-sonarscanner
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+
       - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-         dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
-         dotnet build
-         dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
+          dotnet build
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
