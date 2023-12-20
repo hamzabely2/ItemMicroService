@@ -3,8 +3,8 @@ name: CI/CD with SonarCloud
 on:
   push:
     branches:
-      - test
-      - main
+      - master
+      - develop
   pull_request:
     types: [opened, synchronize, reopened]
 
