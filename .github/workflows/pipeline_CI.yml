@@ -27,8 +27,15 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
 
-    - name: Test
-      run: dotnet test
+
+  test :
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Test
+        run: dotnet test
 
   sonarcloud:
     runs-on: windows-latest
