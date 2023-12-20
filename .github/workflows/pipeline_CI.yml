@@ -62,7 +62,7 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
            Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -OutFile sonar-scanner-msbuild.zip
-           Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner
+           Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner -Force
            Remove-Item sonar-scanner-msbuild.zip
 
       - name: Install dotnet-sonarscanner
