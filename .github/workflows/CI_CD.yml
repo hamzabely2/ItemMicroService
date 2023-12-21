@@ -10,33 +10,33 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.100
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-    - name: Build
-      run: dotnet build --configuration Release
+      - name: Build
+        run: dotnet build --configuration Release
 
-    - name: Build Docker image
-      run: |
-        docker build -t my-app:latest .
-        docker save my-app:latest -o my-app.tar
+      - name: Build Docker image
+        run: |
+          docker build -t my-app:latest .
+          docker save my-app:latest -o my-app.tar
 
-    - name: Upload Docker image artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: my-app-artifact
-        path: my-app.tar
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-app-artifact
+          path: my-app.tar
 
   test:
     runs-on: ubuntu-latest
@@ -71,9 +71,9 @@ jobs:
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
-           Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -OutFile sonar-scanner-msbuild.zip
-           Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner -Force
-           Remove-Item sonar-scanner-msbuild.zip
+          Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -OutFile sonar-scanner-msbuild.zip
+          Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner -Force
+          Remove-Item sonar-scanner-msbuild.zip
 
       - name: Install dotnet-sonarscanner
         run: |
@@ -83,26 +83,26 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-           dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
-           dotnet build
-           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
+          dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
+          dotnet build
+          dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
 
   deploy:
     runs-on: ubuntu-latest
     needs: sonarcloud
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Download Docker image artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: my-app-artifact
-        path: my-app.tar
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: my-app-artifact
+          path: my-app.tar
 
-    - name: Load Docker image on VM
-      run: |
-        docker load -i my-app.tar
-        cd path/to/your/project  # Assurez-vous d'ajuster le chemin
-        docker-compose up -d
+      - name: Load Docker image on VM
+        run: |
+          docker load -i my-app.tar
+          cd path/to/your/project  # Assurez-vous d'ajuster le chemin
+          docker-compose up -d
