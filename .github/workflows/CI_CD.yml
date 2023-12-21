@@ -29,8 +29,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          sudo docker build -t my-app:latest .
-          sudo docker save my-app:latest -o my-app.tar
+          sudo docker-compose -f docker-compose.yaml
+          sudo docker save ItemMicroService > ItemMicroService.tar
 
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v2
