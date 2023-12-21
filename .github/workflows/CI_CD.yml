@@ -29,7 +29,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          sudo docker-compose -f docker-compose.yaml
+          sudo docker-compose -f docker-compose.yaml build
           sudo docker save ItemMicroService > ItemMicroService.tar
 
       - name: Upload Docker image artifact
