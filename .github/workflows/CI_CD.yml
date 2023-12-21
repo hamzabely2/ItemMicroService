@@ -35,8 +35,8 @@ jobs:
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v2
         with:
-          name: my-app-artifact
-          path: my-app.tar
+          name: itemmicroservice-artifact
+          path: itemmicroservice.tar
 
   test:
     runs-on: ubuntu-latest
@@ -98,11 +98,11 @@ jobs:
       - name: Download Docker image artifact
         uses: actions/download-artifact@v2
         with:
-          name: my-app-artifact
-          path: my-app.tar
+          name: itemmicroservice-artifact
+          path: itemmicroservice.tar 
 
       - name: Load Docker image on VM
         run: |
-          docker load -i my-app.tar
-          cd path/to/your/project  # Assurez-vous d'ajuster le chemin
+          docker load -iitemmicroservice.tar 
+          cd _work/ItemMicroService # Assurez-vous d'ajuster le chemin
           docker-compose up -d
