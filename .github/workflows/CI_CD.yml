@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -29,8 +29,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-app:latest .
-          docker save my-app:latest -o my-app.tar
+          sudo docker build -t my-app:latest .
+          sudo docker save my-app:latest -o my-app.tar
 
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v2
