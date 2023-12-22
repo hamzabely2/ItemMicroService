@@ -19,7 +19,7 @@ COPY ["Business/Service.Interface/Service.Interface.csproj", "Business/Service.I
 COPY ["Data/Repository.Interface/Repository.Interface.csproj", "Data/Repository.Interface/"]
 COPY ["Data/Repository/Repository.csproj", "Data/Repository/"]
 COPY ["Business/Service/Service.csproj", "Business/Service/"]
-COPY ["Business/Mapper/Mapper.csproj", "Business/Mapper/"]
+#COPY ["Business/Mapper/Mapper.csproj", "Business/Mapper/"]
 RUN dotnet restore "./ItemMicroService/./ItemMicroService.csproj"
 COPY . .
 WORKDIR "/src/ItemMicroService"
