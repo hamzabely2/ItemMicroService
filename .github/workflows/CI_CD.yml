@@ -72,7 +72,7 @@ jobs:
     permissions:
       packages: write
       contents: read
-    needs: [test]
+    needs: [test,sonarcloud]
     
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     steps:
