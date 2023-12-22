@@ -75,7 +75,7 @@ jobs:
     needs: [test,sonarcloud]
     
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-      steps:
+    steps:
     - uses: actions/checkout@v3
 
     - name: Log in to registry
