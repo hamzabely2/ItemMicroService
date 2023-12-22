@@ -91,4 +91,4 @@ jobs:
         context: ${{ matrix.component }}
         file: ${{ matrix.component }}/Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/spm-${{ matrix.component }}:${{ github.event.after }}
+        tags: ghcr.io/${{ github.repository_owner }}/spm-:${{ github.event.after }}
