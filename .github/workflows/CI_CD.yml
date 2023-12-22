@@ -68,7 +68,7 @@ jobs:
   build-Image:
     strategy:
       matrix:
-        component: ["itemmicroservice"]
+        component: ["itemMicroService"]
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -89,6 +89,6 @@ jobs:
       uses: docker/build-push-action@v2
       with: 
         context: ${{ github.workspace }}/${{ matrix.component }}
-        file: ${{ github.workspace }}/${{ matrix.component }}/Dockerfile
+        file: ${{ github.workspace }}/${{ matrix.component }}/ItemMiroService/Dockerfile
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/spm-${{ matrix.component }}:${{ github.event.after }}
