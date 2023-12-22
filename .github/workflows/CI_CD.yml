@@ -68,7 +68,7 @@ jobs:
   build-Image:
     strategy:
       matrix:
-        component: ["itemMicroService"]
+        component: ["ItemMicroService"]
     runs-on: ubuntu-latest
     permissions:
       packages: write
