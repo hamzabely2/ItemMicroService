@@ -9,37 +9,8 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
-    runs-on: self-hosted
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.100
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --configuration Release
-
-      - name: Build Docker image
-        run: |
-          sudo docker-compose -f docker-compose.yaml build
-          sudo docker save itemmicroservice-app > itemmicroservice.tar
-
-      - name: Upload Docker image artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: itemmicroservice-artifact
-          path: itemmicroservice.tar
-
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hoste
     needs: build
     steps:
       - name: Checkout repository
@@ -86,9 +57,37 @@ jobs:
           dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
           dotnet build
           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release
+
+      - name: Build Docker image
+        run: |
+          sudo docker-compose -f docker-compose.yaml build
+          sudo docker save itemmicroservice-app > itemmicroservice.tar
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: itemmicroservice-artifact
+          path: itemmicroservice.tar
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hoste
     needs: sonarcloud
 
     steps:
