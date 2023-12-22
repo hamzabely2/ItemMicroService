@@ -10,11 +10,18 @@ on:
 
 jobs:
   test:
-    runs-on: self-hoste
-    needs: build
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
+
+      - name: Restore dependencies
+        run: dotnet restore
 
       - name: Test
         run: dotnet test
@@ -57,9 +64,17 @@ jobs:
           dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
           dotnet build
           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
-  build:
+  build-Image:
+    strategy:
+      matrix:
+        component: ["frontend", "backend"]
     runs-on: self-hosted
-
+    permissions:
+      packages: write
+      contents: read
+    needs: [test,sonarcloud]
+    
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -77,7 +92,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          sudo docker-compose -f docker-compose.yml build
+          sudo docker-compose -f docker-compose.yaml build
           sudo docker save itemmicroservice-app > itemmicroservice.tar
 
       - name: Upload Docker image artifact
@@ -85,23 +100,3 @@ jobs:
         with:
           name: itemmicroservice-artifact
           path: itemmicroservice.tar
-
-  deploy:
-    runs-on: self-hoste
-    needs: sonarcloud
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Download Docker image artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: itemmicroservice-artifact
-          path: itemmicroservice.tar 
-
-      - name: Load Docker image on VM
-        run: |
-          docker load -iitemmicroservice.tar 
-          cd _work/ItemMicroService # Assurez-vous d'ajuster le chemin
-          docker-compose up -d
