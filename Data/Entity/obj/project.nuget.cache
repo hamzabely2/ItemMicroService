@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6e241z89wRRX0T5cLUmkjslkXloAXPXpNE/p+dFKBXnl9pTBABzJubQski1GB8mOow3tYMgwQB17XpdCEte0jA==",
+  "dgSpecHash": "Vz+chE666qoMD+88egLUpC99fzzgvxQfkCxOygI2dKBQjP7BFFGq9LgtmxfhBSrcpKgqlJj+4fJlaoNaQFajDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Data\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Data\\Entity\\Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

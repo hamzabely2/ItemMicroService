@@ -77,7 +77,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          sudo docker-compose -f docker-compose.yaml build
+          sudo docker-compose -f docker-compose.yml build
           sudo docker save itemmicroservice-app > itemmicroservice.tar
 
       - name: Upload Docker image artifact

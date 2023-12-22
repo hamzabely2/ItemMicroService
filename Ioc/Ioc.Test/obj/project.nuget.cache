@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s9FytEmec3E/bNQyZHCGMFikSfAnC5CepRC8IcdZoSkXoTzGD/ykDQkfyEFQgurEm5RZpt7bKT19xOZ9tqbcAg==",
+  "dgSpecHash": "mWO0AKFOaYwYojmIVxkJay+dq/3u0eEzdKraexmAPhreJyWw8grNPDPd825G729fU/OSerJSX7EQrqNNpgdWcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Ioc\\Ioc.Test\\Ioc.Test.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Ioc\\Ioc.Test\\Ioc.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",

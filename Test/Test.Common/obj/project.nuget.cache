@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VhJr/GpfsZl2DyYb2VrCz9NvDaluQqv2omPjdFrELCZVAYx3RXen69Vat4vV/aubtVQg7CKvepJDFM/qpXQxuQ==",
+  "dgSpecHash": "TWs/6pcfuOq6Waa+3O2292GREuBsHNLWMmoE8Rofot+Tra+R3oyJIAGcvf746IewavEH8g8yhWqdaMTVPQtyKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Test\\Test.Common\\Test.Common.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Test\\Test.Common\\Test.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4GsFXSrZiMdkayKg4OkQPnwYNL9SnPRyHzN9qXJa7XCQ+BHBV16UEBQ8Db602EQX0orrEr21M+8zuNjcilzHtA==",
+  "dgSpecHash": "pzULzrOHBXzC6f0ObQV0dWiEM6UgrG+bRjjbEXBVfPZOw2JH4Dm7xl2cB02UAr8d5CchiABwi1N29Ans1L4how==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\ItemMicroService\\ItemMicroService.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\ItemMicroService\\ItemMicroService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

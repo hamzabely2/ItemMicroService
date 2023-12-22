@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/RgoOYnQ52GxYF9p21Y8H+KDhKYqB18nb9tFwE0/x5cesAgi3MZxp7CpQJLao1SswHcmz+kVf8sdE6Im3R2kKQ==",
+  "dgSpecHash": "v7EGn9Bo8uCeYl72v8Phtp2pJMWV0a5BSXwEeic3ASydKyAxLsbUYnaqmI36qq+AbJtW2Se0f8YdhW1pZ/De8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",

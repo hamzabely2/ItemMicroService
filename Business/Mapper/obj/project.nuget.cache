@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OfbOCljMrKn0YdUWuWkzA8s/BG5i6Sm5KVy4F+4mlAlGWdaxm7NWKdFUtpDJVsQVzwSzgdIi+9n8oo9ptPpzTw==",
+  "dgSpecHash": "B2kzhinlqXA1gT0GquJJ+jbm3kMrmhC5v05HQhE/1xWgliAEPub/Xlh7Zvaja138NkQH/yJL8OgxI450vfMeQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Mapper\\Mapper.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Mapper\\Mapper.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

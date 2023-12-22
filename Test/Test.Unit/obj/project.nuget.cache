@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wnfMbWdZzMDwpqXc8UJZr5uNaGkoidliNIyoMNbv+7qlw0q6pHvs2/5t0FtCQkjeGUm6lCKRL1da07gg68afhQ==",
+  "dgSpecHash": "qPgkGiOW/Zq9a2/+g22ohN6iystcCaelSJSvrKlB1qo11ZK5/pFT7NAb3U1Vw9eYj80X8ZyQM2PuHShiDe3Elw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Test\\Test.Unit\\Test.Unit.csproj",
+  "projectFilePath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Test\\Test.Unit\\Test.Unit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

@@ -672,11 +672,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
+      "projectUniqueName": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
       "projectName": "Service.Interface",
-      "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
+      "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Service.Interface\\Service.Interface.csproj",
       "packagesPath": "C:\\Users\\hamza.belyahiaoui\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Service.Interface\\obj\\",
+      "outputPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Service.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -698,14 +698,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Business\\Model\\Model.csproj"
+            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Business\\Model\\Model.csproj"
             },
-            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Data\\Repository.Interface\\Repository.Interface.csproj": {
-              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Data\\Repository.Interface\\Repository.Interface.csproj"
+            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Data\\Repository.Interface\\Repository.Interface.csproj": {
+              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Data\\Repository.Interface\\Repository.Interface.csproj"
             },
-            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Data\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot shop\\ItemMicroService\\Data\\Repository\\Repository.csproj"
+            "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Data\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\hamza.belyahiaoui\\Desktop\\pot-shop_github\\ItemMicroService\\Data\\Repository\\Repository.csproj"
             }
           }
         }
@@ -735,7 +735,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
