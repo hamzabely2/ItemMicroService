@@ -45,6 +45,7 @@ jobs:
         category: "/language:${{matrix.language}}"
   test:
     runs-on: self-hosted
+    needs: analyze
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
