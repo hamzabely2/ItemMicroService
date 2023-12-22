@@ -68,7 +68,7 @@ jobs:
     strategy:
       matrix:
         component: ["itemmicroservice"]
-    runs-on: self-hosted
+    runs-on:  ubuntu-latest
     permissions:
       packages: write
       contents: read
