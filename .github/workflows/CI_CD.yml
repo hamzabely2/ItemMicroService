@@ -64,22 +64,26 @@ jobs:
           dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
           dotnet build
           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
+
   build-Image:
     strategy:
       matrix:
-        component: ["itemmicroservice"]
-    runs-on: self-hosted
+        component: ["ItemMicroService"]
+    runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
-    needs: [test,sonarcloud]
+    needs: [test, sonarcloud]
     
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     steps:
     - uses: actions/checkout@v3
 
+    - name: Display current directory contents
+      run: ls
+
     - name: Log in to registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+      run: echo "${{ secrets.TOKEN_GITHUB }}" | docker login ghcr.io -u $ --password-stdin
 
     - name: Build the Docker image
       uses: docker/build-push-action@v2
@@ -87,4 +91,4 @@ jobs:
         context: ${{ matrix.component }}
         file: ${{ matrix.component }}/Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/spm-${{ matrix.component }}:${{ github.ref_name }}
+        tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.after }}
