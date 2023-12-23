@@ -103,7 +103,7 @@ jobs:
           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
 
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [test,sonarcloud]
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     
