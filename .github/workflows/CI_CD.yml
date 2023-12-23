@@ -114,12 +114,10 @@ jobs:
         - name: Build Docker images
           run: |
             sudo docker-compose -f docker-compose.yml build 
-            sudo docker save usermicroservice > usermicroservice.tar 
-            sudo docker save productmicroservice > productmicroservice.tar
+            sudo docker save itemmicroservice > itemmicroservice.tar 
         - name: Transfer Docker Image to Server
           run: |
-            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no usermicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
-            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no productmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
+            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
           env:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         - name: Load Docker Image on Server
