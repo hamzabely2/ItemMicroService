@@ -105,8 +105,8 @@ jobs:
   build-and-deploy:
     runs-on: self-hosted 
     needs: [test,sonarcloud]
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-
+    #if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    
     steps:
         - name: Pull Data from main branch
           uses: actions/checkout@v2
