@@ -6,9 +6,10 @@ on:
       - master
       - develop
   pull_request:
-       branches:
-        - master
-        - develop
+    branches:
+      - master
+      - develop
+
 jobs:
   analyze:
     name: Analyze
@@ -25,31 +26,32 @@ jobs:
         language: [ 'csharp' ]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: ${{ matrix.language }}
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
 
-    - name: Build .NET application
-      run: dotnet build --configuration Release
+      - name: Build .NET application
+        run: dotnet build --configuration Release
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{matrix.language}}"
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}"
+
   test:
     runs-on: self-hosted
     needs: analyze
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
@@ -100,30 +102,28 @@ jobs:
           dotnet build
           dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
 
-  build-Image:
-    strategy:
-      matrix:
-        component: ["ItemMicroService"]
+  build-and-deploy:
     runs-on: self-hosted
-    permissions:
-      packages: write
-      contents: read
-    needs: [test, sonarcloud]
     
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Display current directory contents
-      run: ls
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: username/repo:latest  # Remplacez par vos propres tags
 
-    - name: Log in to registry
-      run: echo "${{ secrets.TOKEN_GITHUB }}" | docker login ghcr.io -u $ --password-stdin
-
-    - name: Build the Docker image
-      uses: docker/build-push-action@v2
-      with: 
-        context: ${{ matrix.component }}
-        file: ${{ matrix.component }}/Dockerfile
-        push: true
-        tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.after }}
+      - name: SSH into VM and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            # Script à exécuter sur la VM
+            docker-compose -f /chemin/vers/votre/docker-compose.yml up -d
