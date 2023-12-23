@@ -76,37 +76,61 @@ jobs:
           java-version: 17
           distribution: 'zulu'
 
-      # ... (rest of the SonarCloud configuration remains unchanged)
+      - name: Cache SonarCloud scanner
+        uses: actions/cache@v2
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        run: |
+          Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-netcoreapp3.0.zip -OutFile sonar-scanner-msbuild.zip
+          Expand-Archive -Path sonar-scanner-msbuild.zip -DestinationPath .sonar/scanner -Force
+          Remove-Item sonar-scanner-msbuild.zip
+
+      - name: Install dotnet-sonarscanner
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+
+      - name: Build and analyze with SonarCloud
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          dotnet sonarscanner begin /k:'hamzabely2_ItemMicroService' /o:'hamzabely2' /d:sonar.token='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io'
+          dotnet build
+          dotnet sonarscanner end /d:sonar.token='${{ secrets.SONAR_TOKEN }}'
 
   build-and-deploy:
-    runs-on: self-hosted
-    needs: [sonarcloud, test]
+    runs-on: self-hosted 
+    needs: [test,sonarcloud]
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-    
+
     steps:
-      - name: Pull Data from main branch
-        uses: actions/checkout@v2
-
-      - name: Build Docker images
-        run: |
-          sudo docker-compose -f docker-compose.yml build 
-          sudo docker save itemmicroservice > itemmicroservice.tar 
-
-      - name: Transfer Docker Image to Server
-        run: |
-          sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-
-      - name: Load Docker Image on Server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: 22
-          script: |
-            ./resetimages.sh
-
-      - name: Remove Docker Images
-        run: sudo docker image prune -a -f
+        - name: Pull Data from main branch
+          uses: actions/checkout@v2
+  
+        - name: Build Docker images
+          run: |
+            sudo docker-compose -f docker-compose.yml build 
+            sudo docker save usermicroservice > usermicroservice.tar 
+            sudo docker save productmicroservice > productmicroservice.tar
+        - name: Transfer Docker Image to Server
+          run: |
+            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no usermicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
+            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no productmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
+          env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        - name: Load Docker Image on Server
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            port: 22
+            script: |
+              ./resetimages.sh
+              
+        - name: Remove Docker Images
+          run: sudo docker image prune -a -f
