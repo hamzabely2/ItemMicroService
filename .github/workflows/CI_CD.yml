@@ -117,7 +117,7 @@ jobs:
             sudo docker save itemMicroService > itemMicroService.tar 
         - name: Transfer Docker Image to Server
           run: |
-            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
+            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemMicroService.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
           env:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         - name: Load Docker Image on Server
