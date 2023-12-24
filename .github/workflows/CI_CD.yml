@@ -114,7 +114,7 @@ jobs:
         - name: Build Docker images
           run: |
             sudo docker-compose -f docker-compose.yml build 
-            sudo docker save itemmicroservice > itemmicroservice.tar 
+            sudo docker save itemMicroService > itemMicroService.tar 
         - name: Transfer Docker Image to Server
           run: |
             sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
