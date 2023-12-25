@@ -132,15 +132,15 @@ jobs:
           run: sudo apt-get install -y sshpass
         - name: Transfer Docker Image to Server
           run: |
-            sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice-app.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
+            sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice-app.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/root/
           env:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         - name: Load Docker Image on Server
           uses: appleboy/ssh-action@master
           with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            password: ${{ secrets.PASSWORD }}
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            password: ${{ secrets.SSH_PASSWORD }}
             port: 22
             script: |
               ./resetimages.sh
