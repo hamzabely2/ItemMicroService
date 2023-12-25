@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["ItemMicroService/ItemMicroService.csproj", "ItemMicroService/"]
-COPY ["Business/Model/Model.csproj", "Business/Model/"]
+COPY ["ItemMicroService/Business/Model/Model.csproj", "Business/Model/"]
 COPY ["Data/Entity/Entity.csproj", "Data/Entity/"]
 COPY ["Ioc/Ioc.Test/Ioc.Test.csproj", "Ioc/Ioc.Test/"]
 COPY ["Data/Context/Context.csproj", "Data/Context/"]
