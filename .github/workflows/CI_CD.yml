@@ -127,6 +127,9 @@ jobs:
           run: |
             sudo docker-compose -f docker-compose.yml build 
             sudo docker save itemmicroservice-app > itemmicroservice-app.tar 
+
+        - name: Install sshpass
+          run: sudo apt-get install -y sshpass
         - name: Transfer Docker Image to Server
           run: |
             sshpass -p ${{ secrets.PASSWORD }} scp -o StrictHostKeyChecking=no itemmicroservice-app.tar ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/root/
