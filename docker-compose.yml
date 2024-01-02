@@ -5,4 +5,3 @@ services:
       dockerfile: ./ItemMicroService/Dockerfile
     ports:
       - "1001:80"
-
