@@ -141,7 +141,7 @@ jobs:
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USERNAME }}
             password: ${{ secrets.SSH_PASSWORD }}
-            port: 22
+            port: ${{ SSH_PORT }}
             script: |
               ./deploy.sh
               
