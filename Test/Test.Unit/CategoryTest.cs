@@ -7,6 +7,7 @@ namespace Api.Test.Unit
 {
     public class CategoryTest : TestBase
     {
+    
         private ICategoryRepository _categoryRepository;
 
 
